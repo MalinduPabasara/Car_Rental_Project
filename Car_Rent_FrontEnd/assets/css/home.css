@@ -1,0 +1,203 @@
+/*#mainNavBar {*/
+/*    position: fixed;*/
+/*}*/
+
+body{
+    background-color: #ffffff;
+}
+
+#navMain {
+    font-size: 50px;
+    font-family: 'Baloo Tammudu 2', cursive;
+}
+
+#car1Img {
+    width: 100vw;
+    height: 75vh;
+    /*opacity: 90%;*/
+}
+
+#guestUser {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 300px;
+    left: 150px;
+
+}
+
+#registerdUser {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 300px;
+    left: 300px;
+}
+
+#drivers {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 300px;
+    left: 450px;
+}
+
+/*==========================*/
+
+#registerForm {
+    width: 50vw;
+    position: relative;
+    left: 250px;
+    display: inline-block;
+
+}
+
+#headerName {
+
+}
+
+#btnregUser {
+    text-decoration: none;
+    color: black;
+}
+
+#btnGuestUser {
+    text-decoration: none;
+    color: black;
+}
+
+#btnDriver {
+    text-decoration: none;
+    color: black;
+}
+
+#pickCar {
+    font-family: -apple-system;
+}
+
+/*#pickCar1 {*/
+/*    font-family: 'Baloo Tammudu 2', cursive;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*#car1{*/
+/*    display: inline-block;*/
+/*}*/
+
+.card {
+    display: inline-block;
+}
+
+.sec1, .sec2 {
+    display: inline-block;
+    position: relative;
+    left: 90px;
+}
+
+#btnalreadyReg {
+    position: relative;
+    left: 40px;
+    display: inline-block;
+}
+
+#alreadyRegLink {
+    text-decoration: none;
+    color: black;
+}
+
+#carAdd{
+    display: inline-block;
+    position: relative;
+    left: 300px;
+    width: 50vw;
+
+
+}
+#btnAddCar{
+    position: relative;
+    /*left: 250px;*/
+
+}
+#btnUpdateCar{
+    position: relative;
+    /*left: 50px;*/
+}
+
+#carAddTitle{
+    display: inline-block;
+    position: relative;
+    left: 400px;
+    font-size: 30px;
+}
+#addCarBody{
+    background-color: #e6ebf1;
+}
+
+#form{
+    width: 85vw;
+    position: relative;
+    left: 50px;
+    background-color: #9acdfa;
+}
+
+#table{
+    width: 68vw;
+    position: relative;
+    left: 10px;
+
+}
+
+#carPick{
+    width: 27vw;
+    position: relative;
+    left: 955px;
+    bottom: 292px;
+    border-radius: 15px;
+    display: inline-block;
+    background-color: #cff3c4;
+}
+
+.carPickList{
+    position: relative;
+    left: 25px;
+    /*display: inline-block;*/
+}
+#btnDiv{
+    display: inline-block;
+    position: relative;
+    left: 25px;
+}
+
+.Fontcolor{
+    color: #9a0433;
+    font-size: 18px;
+    font-family: -apple-system;
+}
+
+#carDetails{
+    display: inline-block;
+    position: relative;
+    left: 40px;
+    font-family: 'Baloo Tammudu 2', cursive;
+
+}
+#cost, #startDate, #endDate{
+    width: 300px;
+}
+#formTittle{
+    color: #4f5050;
+    font-family: 'Baloo Tammudu 2', cursive;
+    position: relative;
+    font-size: 25px;
+    left: 25px;
+}
+
+#login{
+    display: inline-block;
+    position: relative;
+    left: 530px;
+}
+
+/*#formDiv{*/
+/*    background-color: #9acdfa;*/
+/*}*/

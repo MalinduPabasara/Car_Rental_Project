@@ -1,0 +1,67 @@
+body {
+    /*background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url();*/
+}
+
+.login {
+    position: relative;
+    width: 50vw;
+    left: 250px;
+    top: 185px;
+    display: inline-block;
+
+}
+
+#regLink {
+    /*position: relative;*/
+    /*left: 75px;*/
+    /*!*top: 225px;*!*/
+    /*display: inline-block;*/
+
+
+}
+
+#registerLink {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 30px;
+    bottom: 10px;
+}
+
+#btnLogin {
+    position: relative;
+    left: 230px;
+    bottom: 13px;
+
+}
+
+/*#registerContent{*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    width: 75vw;*/
+
+/*}*/
+
+#headerName {
+    position: relative;
+    left: 400px;
+    /*display: inline-block;*/
+}
+
+#loginSec{
+    display: inline-block;
+    width: 35vw;
+    position: relative;
+    left: 410px;
+    top: 90px;
+    background-color: #adedfa;
+    border-radius: 10px;
+}
+.fields{
+    position: relative;
+    width: 420px;
+    left: 40px;
+}
+#uName{
+    width: 80px;
+}

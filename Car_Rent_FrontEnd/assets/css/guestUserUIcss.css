@@ -1,0 +1,19 @@
+#table{
+    width: 91vw;
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    border-radius: 15px;
+
+}
+body{
+    background-color: #faecee;
+}
+#pickCar{
+    color: #ffffff;
+    font-family: 'Lobster', cursive;
+}
+
+
+
+

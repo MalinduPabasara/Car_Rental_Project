@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Car</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/home.css" rel="stylesheet">
+</head>
+<body id="addCarBody">
+<!--<h1 class="mb-4" id="carAddTitle">Car Add Form</h1>-->
+<!--<nav class="navbar navbar-dark bg-primary">-->
+<!--    <div class="container-fluid">-->
+<!--        <span class="navbar-brand mb-0 h1" id="carAddTitle">Car Add Form</span>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<section class="row mt-3 shadow" id="form">
+
+    <nav class="navbar navbar-dark bg-primary mb-3">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Car Register Form</span>
+        </div>
+    </nav>
+
+    <div class="col">
+        <form>
+            <div class="mb-3">
+                <label class="form-label" for="referenceNo">Registered No</label>
+                <input class="form-control" id="referenceNo" name="referenceNo" placeholder="" type="text">
+                <ul class="list-group" id="result"></ul>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="brand">Brand</label>
+                <input class="form-control" id="brand" name="brand" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="type">Type</label>
+                <input class="form-control" id="type" name="type" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="passengers">No of Passengers</label>
+                <input class="form-control" id="passengers" name="passengers" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="transmissionType">Transmission Type</label>
+                <input class="form-control" id="transmissionType" name="transmissionType" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="fuelType">Fuel Type</label>
+                <input class="form-control" id="fuelType" name="fuelType" placeholder="" type="text">
+            </div>
+        </form>
+    </div>
+
+    <div class="col">
+        <form>
+
+            <div class="mb-3">
+                <label class="form-label" for="duration">Free Mileage for a Duration</label>
+                <input class="form-control" id="duration" name="duration" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="fMprice">Free Mileage for a Price</label>
+                <input class="form-control" id="fMprice" name="price" placeholder="" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="color">Color</label>
+                <input class="form-control" id="color" name="color" placeholder="" type="text">
+            </div>
+            <div class="mb-2">
+                <label class="form-label" for="priceforExKM">Price For Extra KM</label>
+                <input class="form-control" id="priceforExKM" name="priceforExKM" placeholder="" type="text">
+            </div>
+            <div class="mb-4">
+                <label class="form-label" for="looseDamage">Loose Damage</label>
+                <input class="form-control" id="looseDamage" name="looseDamage" placeholder="" type="text">
+            </div>
+
+            <div class="mb-4">
+                <button class="btn btn-success" id="btnAddCar" type="button">Add Car</button>
+                <button class="btn btn-info" id="btnUpdateCar" type="button">Update Car</button>
+                <button class="btn btn-primary" id="btnSearchCar" type="button">Search Car</button>
+                <button class="btn btn-danger" id="btnDeleteCar" type="button">Delete Car</button>
+            </div>
+
+        </form>
+    </div>
+
+</section>
+
+<script src="assets/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+
+
+
+
+
+
+            // $(document).ready(function () {
+            //     $('#referenceNo').onkeypress(function () {
+            //         $('result').html('');
+            //
+            //         var searchField = $('#referenceNo').val();
+            //         var expression = new RegExp(searchField, "i");
+            //
+            //
+            //         $.ajax({
+            //             method: "GET",
+            //             url: "http://localhost:8081/carrent/api/v1/car",
+            //             async: true,
+            //             contentType: "application/json",                            //convert response into json if valid
+            //             success: function (data) {
+            //                 // let ob = JSON.parse(data);                      //convert response into json if valid
+            //                 console.log(data);
+            //
+            //
+            //                 $.getJSON('data.json', function (data) {
+            //                     $.each(data, function (key, value) {
+            //                         if (value.rno.search(expression) != -1 || value.name.search(
+            //                             expression) != -1) {
+            //                             $('#result').append('<li class="list-group-item"><span class="text-muted">' + value.name + '</span></li>')
+            //                         }
+            //
+            //
+            //                     })
+            //                 })
+            //             }
+            //         })
+            //
+            //         })
+            //     })
+
+
+    // --------------------------------
+
+    $("#btnAddCar").click(function () {
+
+        let rno = $("#referenceNo").val();
+        let brand = $("#brand").val();
+        let type = $("#type").val();
+        let passenger = $("#passengers").val();
+        let transmissionType = $("#transmissionType").val();
+        let fuelType = $("#fuelType").val();
+        let duration = $("#duration").val();
+        let color = $("#color").val();
+        let priceForEx = $("#priceforExKM").val();
+        let looseDamage = $("#looseDamage").val();
+        let fMprice = $("#fMprice").val();
+
+
+        $.ajax({
+            method: 'POST',
+            url: 'http://localhost:8081/carrent/api/v1/car',
+            contentType: "application/json",
+            async: true,
+            data: JSON.stringify({
+                rno: rno,
+                brand: brand,
+                type: type,
+                passenger: passenger,
+                transmissiontype: transmissionType,
+                fueltype: fuelType,
+                freeMforaduration: duration,
+                color: color,
+                dailyRate:dailyRate,
+                monthRate:monthlyRate,
+                freeMforaPrice: fMprice,
+                priceForextrakm: priceForEx,
+                lossdamage: looseDamage
+
+            }),
+            success: function (data) {
+                console.log(data);
+                alert("Car Added...")
+            }
+
+        })
+        clearFields();
+        $("#referenceNo").focus();
+    })
+
+
+    // update
+    $("#btnUpdate").click(function () {
+
+        let rno = $("#referenceNo").val();
+        let brand = $("#brand").val();
+        let type = $("#type").val();
+        let passenger = $("#passengers").val();
+        let transmissionType = $("#transmissionType").val();
+        let fuelType = $("#fuelType").val();
+        let duration = $("#duration").val();
+        let color = $("#color").val();
+        let priceForEx = $("#priceforExKM").val();
+        let looseDamage = $("#looseDamage").val();
+        let fMprice = $("#fMprice").val();
+
+        $.ajax({
+            url: 'http://localhost:8081/carrent/api/v1/car',
+            method: 'put',
+            async: true,
+            contentType: "application/json",
+            data: JSON.stringify({
+                rno: rno,
+                brand: brand,
+                type: type,
+                passenger: passenger,
+                transmissiontype: transmissionType,
+                fueltype: fuelType,
+                freeMforaduration: duration,
+                color: color,
+                freeMforaPrice: fMprice,
+                priceForextrakm: priceForEx,
+                lossdamage: looseDamage
+            }),
+            success: function (data, responseState, xhr) {
+                console.log(data);
+
+            }
+        })
+    });
+
+    // Delete car
+    $("#btnDeleteCar").click(function () {
+        let id = $("#referenceNo").val();
+
+        $.ajax({
+            url: 'http://localhost:8081/carrent/api/v1/car=' + id,
+            method: 'delete',
+            async: true,
+            contentType:'application/json',
+            success: function (data, textState, xhr) {
+                console.log(data);
+
+                alert("ok")
+
+            }
+        })
+    })
+
+            // search car
+
+            $("#btnSearchCar").click(function () {
+
+                let regNo = $("#referenceNo").val();
+
+                $.ajax({
+                    method: "GET",
+                    url: "http://localhost:8081/carrent/api/v1/car",
+                    async: true,
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log(data);
+
+
+                        for (var car of data){
+                            if (car.rno==regNo){
+
+                                let rno = $("#referenceNo").val(`${car.rno}`);
+                                let brand = $("#brand").val(`${car.brand}`);
+                                let type = $("#type").val(`${car.type}`);
+                                let passenger = $("#passengers").val(`${car.passenger}`);
+                                let transmissionType = $("#transmissionType").val(`${car.transmissiontype}`);
+                                let fuelType = $("#fuelType").val(`${car.fueltype}`);
+                                let duration = $("#duration").val(`${car.freeMforaduration}`);
+                                let color = $("#color").val(`${car.color}`);
+                                let priceForEx = $("#priceforExKM").val(`${car.priceForextrakm}`);
+                                let looseDamage = $("#looseDamage").val(`${car.lossdamage}`);
+                                let fMprice = $("#fMprice").val(`${car.freeMforaPrice}`);
+                            }/*else {
+                                alert("There isn't Register number in the Database, Try again...")
+                            }*/
+                        }
+
+                    }
+
+                })
+            })
+
+            // for (var i in customerDB) {
+            //     if (customerDB[i].getCustomerID() == id) return customerDB[i];
+            // }
+            // return null;
+
+
+    function clearFields() {
+
+        let rno = $("#referenceNo").val("");
+        let brand = $("#brand").val("");
+        let type = $("#type").val("");
+        let passenger = $("#passengers").val("");
+        let transmissionType = $("#transmissionType").val("");
+        let fuelType = $("#fuelType").val("");
+        let duration = $("#duration").val("");
+        let color = $("#color").val("");
+        let priceForEx = $("#priceforExKM").val("");
+        let looseDamage = $("#looseDamage").val("");
+        let fMprice = $("#fMprice").val("");
+
+    }
+
+</script>
+</body>
+</html>
