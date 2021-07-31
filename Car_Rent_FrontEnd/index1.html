@@ -18,14 +18,16 @@
     </nav>
 
     <div class="col">
-        <form>
+        <form name="frm">
             <div class="mb-3">
                 <label class="form-label" for="userName">Full Name</label>
                 <input class="form-control" id="userName" name="name" placeholder="Tom Cruis" type="text">
+                <span class="control-error" id="lbluserName"></span>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="userEmail">Email address</label>
                 <input class="form-control" id="userEmail" name="email" placeholder="tom@example.com" type="email">
+                <span class="control-error" id="lbluserEmail"></span>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-2 col-form-label" for="newPassword">Create Password</label>
@@ -36,6 +38,7 @@
             <div class="mb-3">
                 <label class="form-label" for="address">Address</label>
                 <input class="form-control" id="address" name="address" placeholder="212/A,Labuduwa,Galle" type="text">
+                <span class="control-error" id="lbladdress"></span>
             </div>
         </form>
     </div>
@@ -44,19 +47,20 @@
         <form>
             <div class="mb-3">
                 <label class="form-label" for="contact">Contact No</label>
-                <input class="form-control" id="contact" name="address" placeholder="" type="tel">
+                <input class="form-control" id="contact" name="contact" placeholder="" type="tel">
+                <span class="control-error" id="lblcontact"></span>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="drivindNum">Driving License Number here</label>
                 <input class="form-control" id="drivindNum" name="dlicense" placeholder="" type="text">
-                <label class="form-label" for="drivingLicense">Upload Your Driving License</label>
-                <input class="form-control" id="drivingLicense" type="file">
+                <label class="form-label" for="Dfile">Upload Your Driving License</label>
+                <input class="form-control" id="Dfile" name="file" type="file">
             </div>
             <div class="mb-3">
                 <label class="form-label" for="identityCardNum">Identity Number here(NIC)</label>
                 <input class="form-control" id="identityCardNum" name="icard" placeholder="" type="text">
-                <label class="form-label" for="identityCard">Upload Your Identity Card</label>
-                <input class="form-control" id="identityCard" type="file">
+                <label class="form-label" for="Ifile">Upload Your Identity Card</label>
+                <input class="form-control" id="Ifile" name="file" type="file">
             </div>
             <div class="mb-2">
                 <button class="btn btn-success" id="btnRegister" type="button">Register</button>
@@ -72,6 +76,7 @@
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/customer.js"></script>
 <script>
 
 
@@ -92,13 +97,41 @@
         // data.append("identityCard", fileObject, fileName)
 
 
+        // $("#btnUpload").click(function () {
+
+        var fileObject = $("#Ifile")[0].files[0];
+        var fileName = $("#Ifile")[0].files[0].name;
+
+        var data = new FormData();
+        data.append("file", fileObject, fileName)
+
+
+        var fileObject1 = $("#Dfile")[0].files[0];
+        var fileName1 = $("#Dfile")[0].files[0].name;
+
+        var data1 = new FormData();
+        data.append("file", fileObject1, fileName1)
+
+
+        $.ajax({
+            url: 'http://localhost:8081/carrent/api/v1/customer',
+            method: 'POST',
+            async: true,
+            processData: false,
+            contentType: false,
+            data: data, data1,
+            success: function () {
+                alert("Upload Success")
+            }
+        })
+
 
         $.ajax({
             method: 'POST',
             url: 'http://localhost:8081/carrent/api/v1/customer',
             contentType: "application/json",
             async: true,
-            processData:false,
+            processData: false,
             data: JSON.stringify({
                 // file:data,
                 nic: identityNo,

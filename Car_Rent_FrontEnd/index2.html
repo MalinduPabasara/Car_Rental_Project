@@ -130,8 +130,15 @@
                 <label class="form-label" for="cost">Cost</label>
                 <input class="form-control" id="cost" name="cost" placeholder="" type="text">
             </div>
+
+            <div class="mb-3 carPickList">
+                <label class="form-label" for="rentID">Rent ID</label>
+                <input class="form-control" id="rentID" name="rentID" placeholder="" type="text">
+            </div>
+
             <div class="mb-4 carPickList">
-                <button class="btn btn-primary" id="btnPick" style="background-color: #0ff58a" type="button">Pick</button>
+                <button class="btn btn-primary btnpicklink" id="btnPick" style="background-color: #0ff58a" type="button"><a
+                        href="index6.html">Pick</a></button>
             </div>
 
         </form>
@@ -221,40 +228,66 @@
 
         // send rent data to the database
     $('#btnPick').click(function () {
-
+        let rentID = $('#rentID').val();
         let startDate = $("#startDate").val();
         let endDate = $("#endDate").val();
         let cost = $("#cost").val();
-        let duration = $('#hduration').val();
-        let priceEx = $('hpriceExKm').val();
-        getRate()
+        let duration = $('#hduration').text();
+        let priceEx = $('#hpriceExKm').text();
+        let rate=getRate();
+        let regNo = $('#hregisterNo').text();
 
 
         $.ajax({
-            url: 'http://localhost:8081/carrent/api/v1/rent',
-            method: 'post',
+            method: "GET",
+            url: "http://localhost:8081/carrent/api/v1/customer",
             async: true,
             contentType: "application/json",
-            data: JSON.stringify({
+            success: function (data) {
+                // let ob = JSON.parse(data);
+                // console.log(data);
+                console.log(data[0].nic);
+                alert(data[0].nic);
 
-                // add id(auto genarate)
-
-                startDate: startDate,
-                endDate: endDate,
-                duration: duration,
-                cost: cost,
-                extrakm: priceEx,
-                getRate:getRate()
-
-            }),
-            success: function (data, responseState, xhr) {
-                console.log(data);
-
+                for (var cus of data) {
+                    // alert("customer details get")
+                    // alert(cus.nic)
+                    console.log(cus.nic);
+                    // let nic = cus.nic;
+                }
             }
         })
+
+
     })
 
 
+
+    $.ajax({
+        url: 'http://localhost:8081/carrent/api/v1/rent',
+        method: 'post',
+        async: true,
+        contentType: "application/json",
+        data: JSON.stringify({
+
+            // add id(auto genarate)
+            rentId:rentID,
+            startDate: startDate,
+            endDate: endDate,
+            duration: duration,
+            cost: cost,
+            extrakm: priceEx,
+            getRate:rate,
+            rno:regNo
+
+
+        }),
+        success: function (data, responseState, xhr) {
+            console.log(data);
+            // alert("ok")
+
+        }
+    })
 </script>
 </body>
 </html>

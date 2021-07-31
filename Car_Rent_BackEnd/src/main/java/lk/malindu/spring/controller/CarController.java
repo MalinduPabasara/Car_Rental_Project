@@ -30,7 +30,7 @@ public class CarController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<CarDTO> getAllCars() {
-//        System.out.println("Get Called");
+
         return service.getAllCars();
     }
 
@@ -42,6 +42,7 @@ public class CarController {
 
     @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public String deleteCar(@RequestParam String id) {
+        System.out.println("delete called");
         boolean b = service.deleteCar(id);
         return b + "";
     }

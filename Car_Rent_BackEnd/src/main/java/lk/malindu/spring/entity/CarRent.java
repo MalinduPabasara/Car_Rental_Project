@@ -10,9 +10,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Embeddable
 public class CarRent {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private String rentId;
     private String startDate;
     private String endDate;
@@ -22,12 +23,15 @@ public class CarRent {
     private double cost;
     private int extrakm;
     @ManyToOne
-    @JoinColumn(name = "nic",referencedColumnName = "nic")
+    @JoinColumn(name = "nic",referencedColumnName = "nic",insertable = false,updatable = false)
     private Customer nic;
     @ManyToOne
-    @JoinColumn(name = "rno",referencedColumnName = "rno")
+    @JoinColumn(name = "rno",referencedColumnName = "rno",insertable = false,updatable = false)
     private Car rno;
-    @ManyToOne
-    @JoinColumn(name = "id",referencedColumnName = "id")
-    private Drivers id;
+
+//    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
+//    private Orders oid;
+//    @ManyToOne
+//    @JoinColumn(name = "id",referencedColumnName = "id")
+//    private Drivers id;
 }

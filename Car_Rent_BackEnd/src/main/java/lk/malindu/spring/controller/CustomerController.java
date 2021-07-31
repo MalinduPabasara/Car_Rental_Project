@@ -7,14 +7,17 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.annotation.MultipartConfig;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/v1/customer")
+@MultipartConfig
 public class CustomerController {
 
     @Autowired
@@ -27,6 +30,7 @@ public class CustomerController {
         return b;
 
     }
+
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public boolean saveFile(@RequestPart("file") MultipartFile myFile) {

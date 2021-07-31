@@ -1,0 +1,98 @@
+#paymentTopic {
+    position: relative;
+    left: 312px;
+    top: 10px;
+    font-family: 'Baloo Tammudu 2', cursive;
+    font-style: oblique;
+}
+
+.cardNoPlc {
+    position: relative;
+    width: 650px;
+    left: 10px;
+}
+
+.section {
+    position: relative;
+    left: 200px;
+    top: 100px;
+    width: 680px;
+    height: 330px;
+    background-color: #e4b4f6;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.p1 {
+    position: relative;
+    background-color: #9b3eec;
+    height: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.p1:hover{
+    position: relative;
+    background-color: #b47fe5;
+    height: 330px;
+    border-radius: 10px;
+    /*border-top-left-radius: 10px;*/
+    /*border-top-right-radius: 10px;*/
+    transform: scale(1.00);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.p2 {
+
+}
+
+.expiryPlc {
+    position: relative;
+    width: 400px;
+    left: 10px;
+
+}
+
+.cvsPlc {
+    position: relative;
+    bottom: 86px;
+    left: 439px;
+    width: 221px;
+}
+
+.name {
+    /*width: 400px;*/
+    position: relative;
+    bottom: 82px;
+    left: 10px;
+    width: 650px;
+}
+
+
+/*.cal{*/
+/*    margin: 20px;*/
+/*    height: 200px;*/
+/*    width: 200px;*/
+/*    background: #dde1e7;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: inset -3px -3px 7px rgba(255, 255, 255, 0.45),inset 3px 3px 5px rgba(*/
+/*            94,104,121, .288);*/
+/*}*/
+
+
+
+/*.cal{*/
+/*    height: 200px;*/
+/*    width: 200px;*/
+/*    background: #dde1e7;*/
+/*    border-radius: 5px;*/
+/*    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(*/
+/*            94,104,121, .288);*/
+/*    transition: all 0.3s ease-in-out;*/
+/*}*/
+
+/*.cal:hover{*/
+/*    transform: scale(1.05);*/
+/*    transition: ease-in-out;*/
+/*}*/

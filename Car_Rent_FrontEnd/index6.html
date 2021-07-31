@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="assets/css/payment.css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="section">
+    <nav class="p1">
+              <div class="p2">
+
+                  <h6 id="paymentTopic">Payment</h6>
+                  <div class="mb-3 cardNoPlc">
+                      <label class="form-label" for="cardnum">Card Number</label>
+                      <input class="form-control" id="cardnum" name="cardnum" placeholder="" type="text">
+                      <span class="control-error" id="lblCardNumber"></span>
+                  </div>
+                  <div class="mb-3 expiryPlc">
+                      <label class="form-label" for="expiry">Expiry Date</label>
+                      <input class="form-control" id="expiry" name="expiry" placeholder="" type="month">
+                      <span class="control-error" id="lblexpiry"></span>
+                  </div>
+                  <div class="mb-3 cvsPlc">
+                      <label class="form-label" for="cvs">CVS</label>
+                      <input class="form-control" id="cvs" name="cvs" placeholder="" type="text">
+                      <span class="control-error" id="lblcvs"></span>
+                  </div>
+                  <div class="mb-3 name">
+                      <label class="form-label" for="name">Card Holder Name</label>
+                      <input class="form-control" id="name" name="name" placeholder="" type="text">
+                      <span class="control-error" id="lblname"></span>
+                  </div>
+
+              </div>
+    </nav>
+</section>
+<section>
+    <div class="cal">
+
+    </div>
+</section>
+<script src="assets/jquery-3.6.0.min.js"></script>
+<script src="assets/js/payment.js"></script>
+</body>
+</html>

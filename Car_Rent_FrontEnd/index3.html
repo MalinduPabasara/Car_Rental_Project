@@ -20,7 +20,7 @@
     <div class="col">
         <form>
             <div class="mb-3 fields">
-                <label class="col-sm-2 col-form-label" id="uName" for="userName">User Name</label>
+                <label class="col-sm-2 col-form-label" for="userName" id="uName">User Name</label>
                 <div class="col-sm-10">
                     <input class="form-control" id="userName" type="text">
                 </div>
@@ -52,26 +52,25 @@
         let password = $("#inputPassword").val();
 
         $.ajax({
-            url:'http://localhost:8081/carrent/api/v1/customer',
-            method:'GET',
-            async:true,
-            contentType:'application/json',
-            success:function (data) {
+            url: 'http://localhost:8081/carrent/api/v1/customer',
+            method: 'GET',
+            async: true,
+            contentType: 'application/json',
+            success: function (data) {
                 console.log(data);
 
 
-
-                for (let login of data){
-                   if (login.name==userName && login.password==password){
-                       window.close();
-                       window.open("index2.html");
-                   }else if (login.name==userName && login.password!=password){
-                       alert("Password Mismatch, Try again")
-                   }else if (login.name!=userName && login.password==password){
-                       alert("UserName Mismatch, Try again")
-                   }else {
-                       // alert("Wrong Input, Try again..!");
-                   }
+                for (let login of data) {
+                    if (login.name == userName && login.password == password) {
+                        window.close();
+                        window.open("index2.html");
+                    } else if (login.name == userName && login.password != password) {
+                        alert("Password Mismatch, Try again")
+                    } else if (login.name != userName && login.password == password) {
+                        alert("UserName Mismatch, Try again")
+                    } else {
+                        // alert("Wrong Input, Try again..!");
+                    }
                 }
 
             }
